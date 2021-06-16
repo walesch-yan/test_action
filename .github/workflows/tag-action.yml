@@ -1,0 +1,27 @@
+name: Bump version
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
+    - run: git config --local user.email "action@github.com"
+    - run: git config --local user.name "GitHub Action"
+    - name: Bump version and push tag
+      uses: jordiandreu/github-tag-action@develop
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        WITH_V: false
+    - name: push
+      uses: jordiandreu/commit@develop
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        push-branch: develop
+        files: .bumpversion.cfg
+        commit-message: 'Bump version'
+        rebase: 'true' # pull and rebase before commit
