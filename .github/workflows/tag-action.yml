@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - develop
+      - release
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,7 +22,8 @@ jobs:
       uses: jordiandreu/commit@develop
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        push-branch: develop
+#        push-branch: develop The same original source branch: develop or release
+
         files: .bumpversion.cfg
         commit-message: 'Bump version'
         rebase: 'true' # pull and rebase before commit
