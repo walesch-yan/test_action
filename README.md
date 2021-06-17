@@ -83,6 +83,7 @@ Any change on the release branch can be committed and pushed directly to origin/
 or can be integrated via `PR` (to be decided). Both actions will automatically bump the 
 release candidate version as `x.y.z.rcN -> x.y.z.rcN+1`.
 
+#### Bring the changes to develop branch
 The changes committed into the release branch need to be brought
 back into `develop` branch MANUALLY, in order to solve the conflicts regarding
 the version number. This conflict will be solved by resume the `develop` branch
@@ -147,6 +148,7 @@ Any change on the release branch can be committed and pushed directly to origin/
 or can be integrated via `PR` (to be decided). Both actions will automatically bump the 
 master version as `x.y.z -> x.y.z+1`.
 
+#### Bring the changes to develop branch
 The changes committed into the master branch need to be brought
 back into `develop` branch MANUALLY, in order to solve the conflicts regarding
 the version number. This conflict will be solved by resume the `develop` branch
